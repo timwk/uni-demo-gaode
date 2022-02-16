@@ -1,9 +1,6 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
+		<button @tap="goMap" class="btn">跳转高德地图</button>
 	</view>
 </template>
 
@@ -11,14 +8,18 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Index'
 			}
 		},
 		onLoad() {
 
 		},
 		methods: {
-
+			goMap() {
+				uni.navigateTo({
+					url: '/pages/map/index'
+				})
+			}
 		}
 	}
 </script>
@@ -29,21 +30,13 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		padding-top: 80rpx;
 	}
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+	.btn {
+		font-size: 40rpx;
+		line-height: 100rpx;
+		color: #fff;
+		background: #0098f0;
 	}
 </style>
